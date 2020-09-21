@@ -3,11 +3,11 @@
   <title>Hexo</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://github.com/Starry5ky/starry5ky.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://github.com/Starry5ky/starry5ky.github.io/"/>
   <updated>2020-09-21T10:22:30.002Z</updated>
-  <id>http://example.com/</id>
+  <id>https://github.com/Starry5ky/starry5ky.github.io/</id>
   
   <author>
     <name>John Doe</name>
@@ -18,20 +18,20 @@
   
   <entry>
     <title>typora-vue-theme主题介绍</title>
-    <link href="http://example.com/2020/09/18/myfirstpost/"/>
-    <id>http://example.com/2020/09/18/myfirstpost/</id>
+    <link href="https://github.com/Starry5ky/starry5ky.github.io/2020/09/18/myfirstpost/"/>
+    <id>https://github.com/Starry5ky/starry5ky.github.io/2020/09/18/myfirstpost/</id>
     <published>2020-09-18T02:29:00.231Z</published>
     <updated>2020-09-21T10:22:30.002Z</updated>
     
     
     
     
-    <category term="Markdown" scheme="http://example.com/categories/Markdown/"/>
+    <category term="Markdown" scheme="https://github.com/Starry5ky/starry5ky.github.io/categories/Markdown/"/>
     
     
-    <category term="Typora" scheme="http://example.com/tags/Typora/"/>
+    <category term="Typora" scheme="https://github.com/Starry5ky/starry5ky.github.io/tags/Typora/"/>
     
-    <category term="Markdown" scheme="http://example.com/tags/Markdown/"/>
+    <category term="Markdown" scheme="https://github.com/Starry5ky/starry5ky.github.io/tags/Markdown/"/>
     
   </entry>
   
