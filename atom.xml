@@ -6,7 +6,7 @@
   <link href="https://github.com/Starry5ky/starry5ky.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/Starry5ky/starry5ky.github.io/"/>
-  <updated>2020-09-22T01:57:17.009Z</updated>
+  <updated>2020-09-22T02:46:02.906Z</updated>
   <id>https://github.com/Starry5ky/starry5ky.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>C2隐匿之域前置</title>
+    <link href="https://github.com/Starry5ky/starry5ky.github.io/2020/09/22/c2-yin-ni-zhi-yu-qian-zhi/"/>
+    <id>https://github.com/Starry5ky/starry5ky.github.io/2020/09/22/c2-yin-ni-zhi-yu-qian-zhi/</id>
+    <published>2020-09-22T02:03:46.000Z</published>
+    <updated>2020-09-22T02:46:02.906Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;#Domain Fronting&lt;br&gt;##step1: apache or</summary>
+        
+      
+    
+    
+    
+    
+    <category term="C2" scheme="https://github.com/Starry5ky/starry5ky.github.io/tags/C2/"/>
+    
+  </entry>
+  
+  <entry>
     <title>密码保护文件</title>
     <link href="https://github.com/Starry5ky/starry5ky.github.io/2020/09/22/mi-ma-bao-hu-wen-jian/"/>
     <id>https://github.com/Starry5ky/starry5ky.github.io/2020/09/22/mi-ma-bao-hu-wen-jian/</id>
     <published>2020-09-22T01:51:03.000Z</published>
-    <updated>2020-09-22T01:57:17.009Z</updated>
+    <updated>2020-09-22T02:00:30.043Z</updated>
     
     
       

